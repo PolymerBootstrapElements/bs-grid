@@ -1,4 +1,4 @@
-# bs-button
+# bs-grid
 
 [![Build Status](https://travis-ci.org/PolymerBootstrapElements/bs-grid.svg?branch=master)](https://travis-ci.org/PolymerBootstrapElements/bs-grid)
 
@@ -19,14 +19,14 @@ Then, go ahead and download the element's dependencies:
 
 ## Usage
 
-Bootstrap should be referenced in your web page if you want to get benefits from &lt;bs-button&gt; element.
+Bootstrap should be referenced in your web page if you want to get benefits from &lt;bs-grid&gt; element.
 
 ```html
 <link rel="stylesheet" href="libs/bs/boostrap.css">
 <script src="libs/bs/bootstrap.js"></script>
 ```
 
-Use **bs-button** like this:
+Use **bs-grid** like this:
 
 ```html
 <!-- Includes all grid system elements -->
@@ -72,7 +72,7 @@ Once running, you can preview your elements at
 ## Test
 
 Simply navigate to the `/test` directory of your element to run its tests. If
-you are using Polyserve: `http://localhost:8080/components/bs-button/test/`
+you are using Polyserve: `http://localhost:8080/components/bs-grid/test/`
 
 ### web-component-tester
 
