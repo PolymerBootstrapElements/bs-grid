@@ -1,0 +1,43 @@
+{
+  "name": "bs-grid",
+  "version": "0.0.1",
+  "description": "Bootstrap grid system using Polymer Elements.",
+  "authors": [
+    "Gregory Ghez <gregory.ghez@gmail.com>"
+  ],
+  "keywords": [
+    "web-components",
+    "web-component",
+    "polymer",
+    "grid",
+    "row",
+    "col",
+    "container",
+    "container-fluid",
+    "system",
+    "bootstrap",
+    "twitter"
+  ],
+  "main": [
+    "bs-row.html",
+    "bs-container.html",
+    "bs-col.html"
+  ],
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolymerBootstrapElements/bs-grid.git"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/PolymerBootstrapElements/bs-grid",
+  "ignore": [],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.0",
+    "bootstrap": "~3.3.6"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^3.3.0",
+    "marked-element": "PolymerElements/marked-element#~1.1.1",
+    "iron-component-page": "polymerelements/iron-component-page#~1.1.2"
+  }
+}

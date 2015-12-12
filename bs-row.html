@@ -1,0 +1,29 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+Bootstrap Grid system row as Polymer Element.
+
+Example:
+
+    <bs-row>
+        <bs-col lg-length="2"></bs-col>
+    </bs-row>
+
+@demo
+-->
+<dom-module id="bs-row">
+
+    <template>
+        <content></content>
+    </template>
+
+    <script>
+        Polymer({
+            is: 'bs-row',
+            created: function () {
+                this.classList.add('row');
+            }
+        });
+    </script>
+
+</dom-module>

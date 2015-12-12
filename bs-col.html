@@ -1,0 +1,105 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+Bootstrap Grid system column as Polymer Element.
+
+Example:
+
+    <bs-row>
+        <bs-col lg-length="2" lg-offset="10">Right side</bs-col>
+    </bs-row>
+
+@demo
+-->
+<dom-module id="bs-col">
+
+    <template>
+        <content></content>
+    </template>
+
+    <script>
+        Polymer({
+            is: 'bs-col',
+            properties: {
+                /**
+                 * Column length for extra small device (mobile).
+                 */
+                xsLength: {
+                    type: Number,
+                    notify: true,
+                    reflectToAttribute: true
+                },
+                /**
+                 * Column offset for extra small device (mobile).
+                 */
+                xsOffset: {
+                    type: Number,
+                    notify: true,
+                    reflectToAttribute: true
+                },
+                /**
+                 * Column length for small device (mobile).
+                 */
+                smLength: {
+                    type: Number,
+                    notify: true,
+                    reflectToAttribute: true
+                },
+                /**
+                 * Column offset for small device (mobile).
+                 */
+                smOffset: {
+                    type: Number,
+                    notify: true,
+                    reflectToAttribute: true
+                },
+                /**
+                 * Column length for medium device (tablet).
+                 */
+                mdLength: {
+                    type: Number,
+                    notify: true,
+                    reflectToAttribute: true
+                },
+                /**
+                 * Column offset for medium device (tablet).
+                 */
+                mdOffset: {
+                    type: Number,
+                    notify: true,
+                    reflectToAttribute: true
+                },
+                /**
+                 * Column length for large device (desktop).
+                 */
+                lgLength: {
+                    type: Number,
+                    notify: true,
+                    reflectToAttribute: true
+                },
+                /**
+                 * Column offset for large device (desktop).
+                 */
+                lgOffset: {
+                    type: Number,
+                    notify: true,
+                    reflectToAttribute: true
+                }
+            },
+            observers: ['_propertyChanged(xsLength,xsOffset,smLength,smOffset,mdLength,mdOffset,lgLength,lgOffset)'],
+            _propertyChanged: function (name, value) {
+                this.className = '';
+
+                if (this.xsLength) this.classList.add('col-xs-' + this.xsLength);
+                if (this.xsOffset) this.classList.add('col-xs-offset-' + this.xsOffset);
+                if (this.smLength) this.classList.add('col-sm-' + this.smLength);
+                if (this.smOffset) this.classList.add('col-sm-offset-' + this.smOffset);
+                if (this.mdLength) this.classList.add('col-md-' + this.mdLength);
+                if (this.mdOffset) this.classList.add('col-md-offset-' + this.mdOffset);
+                if (this.lgLength) this.classList.add('col-lg-' + this.lgLength);
+                if (this.lgOffset) this.classList.add('col-lg-offset-' + this.lgOffset);
+            }
+        });
+    </script>
+
+</dom-module>

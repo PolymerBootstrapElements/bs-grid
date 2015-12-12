@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+
+    <title>bs-grid Demo</title>
+
+    <link rel="stylesheet" href="../../bootstrap/dist/css/bootstrap.min.css">
+    <script src="../../jquery/dist/jquery.min.js"></script>
+    <script src="../../bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../marked-element/marked-element.html">
+
+    <link rel="import" href="../bs-grid.html">
+
+    <style>
+        body {
+            margin: 20px;
+        }
+
+        .bs-example {
+            position: relative;
+            padding: 45px 15px 15px;
+            margin: 0;
+            border-color: #e5e5e5 #eee #eee;
+            border-style: solid;
+            border-width: 1px 0;
+            box-shadow: inset 0 3px 6px rgba(0, 0, 0, .05);
+        }
+
+        .bs-example:after {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #959595;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            content: "Example";
+        }
+
+        .bs-example [class^=col-] {
+            border: solid 1px dimgray;
+            background: lightgray;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>&lt;bs-grid&gt; demo page</h1>
+<p>Here are some bootstrap grid layout using polymer elements designed for.</p>
+
+<bs-container fluid>
+    <h3>Column sizes for Desktop and Mobile devices <small>bs-container fluid</small></h3>
+    <div class="bs-example">
+
+        <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+        <bs-row>
+            <bs-col xs-length="12" md-length="8">.col-xs-12 .col-md-8</bs-col>
+            <bs-col xs-length="6" md-length="4">.col-xs-6 .col-md-4</bs-col>
+        </bs-row>
+
+        <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+        <bs-row>
+            <bs-col xs-length="6" md-length="4">.col-xs-6 .col-md-4</bs-col>
+            <bs-col xs-length="6" md-length="4">.col-xs-6 .col-md-4</bs-col>
+            <bs-col xs-length="6" md-length="4">.col-xs-6 .col-md-4</bs-col>
+        </bs-row>
+
+        <!-- Columns are always 50% wide, on mobile and desktop -->
+        <bs-row>
+            <bs-col xs-length="6">.col-xs-6</bs-col>
+            <bs-col xs-length="6">.col-xs-6</bs-col>
+        </bs-row>
+
+    </div>
+    <figure>
+        <marked-element>
+            <div class="markdown-html"></div>
+            <script type="text/markdown">
+```html
+<!-- Stack the columns on mobile by making one full-width and the other half-width -->
+<bs-row>
+    <bs-col xs-length="12" md-length="8">.col-xs-12 .col-md-8</bs-col>
+    <bs-col xs-length="6" md-length="4">.col-xs-6 .col-md-4</bs-col>
+</bs-row>
+
+<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+<bs-row>
+    <bs-col xs-length="6" md-length="4">.col-xs-6 .col-md-4</bs-col>
+    <bs-col xs-length="6" md-length="4">.col-xs-6 .col-md-4</bs-col>
+    <bs-col xs-length="6" md-length="4">.col-xs-6 .col-md-4</bs-col>
+</bs-row>
+
+<!-- Columns are always 50% wide, on mobile and desktop -->
+<bs-row>
+    <bs-col xs-length="6">.col-xs-6</bs-col>
+    <bs-col xs-length="6">.col-xs-6</bs-col>
+</bs-row>
+```
+            </script>
+        </marked-element>
+    </figure>
+</bs-container>
+
+<bs-container>
+    <h3>Column offsets <small>bs-container</small></h3>
+    <div class="bs-example">
+        <bs-row>
+            <bs-col md-length="4">.col-md-4</bs-col>
+            <bs-col md-length="4" md-offset="4">.col-md-4 .col-md-offset-4</bs-col>
+        </bs-row>
+        <bs-row>
+            <bs-col md-length="3" md-offset="3">.col-md-3 .col-md-offset-3</bs-col>
+            <bs-col md-length="3" md-offset="3">.col-md-3 .col-md-offset-3</bs-col>
+        </bs-row>
+        <bs-row>
+            <bs-col md-length="6" md-offset="3">.col-md-6 .col-md-offset-3</bs-col>
+        </bs-row>
+    </div>
+    <figure>
+        <marked-element>
+            <div class="markdown-html"></div>
+            <script type="text/markdown">
+```html
+<bs-row>
+    <bs-col md-length="4">.col-md-4</bs-col>
+    <bs-col md-length="4" md-offset="4">.col-md-4 .col-md-offset-4</bs-col>
+</bs-row>
+<bs-row>
+    <div md-length="3" md-offset="3">.col-md-3 .col-md-offset-3</div>
+    <div md-length="3" md-offset="3">.col-md-3 .col-md-offset-3</div>
+</bs-row>
+<bs-row>
+    <bs-col md-length="6" md-offset="3">.col-md-6 .col-md-offset-3</bs-col>
+</bs-row>
+```
+            </script>
+        </marked-element>
+    </figure>
+</bs-container>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>bs-container tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <link rel="stylesheet" href="../../bootstrap/dist/css/bootstrap.min.css">
+    <script src="../../jquery/dist/jquery.min.js"></script>
+    <script src="../../bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="../../webcomponentsjs/webcomponents.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../bs-container.html">
+
+</head>
+<body>
+
+<bs-container id="stdContainer">Inside Container</bs-container>
+<bs-container id="fluidContainer" fluid>Inside Fluid Container</bs-container>
+
+<bs-container id="automatedContainer">Automated</bs-container>
+<script>
+    suite('<bs-container>', function () {
+
+        test('Acts as a div with container class.', function () {
+            var container = document.getElementById('stdContainer');
+
+            expect(container.getAttribute('class')).to.be.eql('container');
+            expect(container.textContent.trim()).to.be.eql('Inside Container');
+        });
+
+        test('Acts as a div with container-fluid class.', function () {
+            var container = document.getElementById('fluidContainer');
+
+            expect(container.getAttribute('class')).to.be.eql('container-fluid');
+            expect(container.textContent.trim()).to.be.eql('Inside Fluid Container');
+        });
+
+        test('Change container type using code.', function () {
+            var container = document.getElementById('automatedContainer');
+
+            expect(container.getAttribute('class')).to.be.eql('container');
+
+            container.fluid = true;
+            expect(container.getAttribute('class')).to.be.eql('container-fluid');
+
+            container.fluid = false;
+            expect(container.getAttribute('class')).to.be.eql('container');
+        });
+    });
+</script>
+</body>
+</html>

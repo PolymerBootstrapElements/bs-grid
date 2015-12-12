@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>bs-col tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <link rel="stylesheet" href="../../bootstrap/dist/css/bootstrap.min.css">
+    <script src="../../jquery/dist/jquery.min.js"></script>
+    <script src="../../bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="../../webcomponentsjs/webcomponents.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../bs-grid.html">
+
+</head>
+<body>
+
+<bs-row>
+    <bs-col xs-length="11" sm-length="6" md-length="4" lg-length="3"
+            xs-offset="1" sm-offset="2" md-offset="5" lg-offset="9"></bs-col>
+    <bs-col md-length="6" id="automatedCol"></bs-col>
+</bs-row>
+
+<script>
+    suite('<bs-col>', function () {
+
+        test('Defined properties are transformed to class.', function () {
+            var row = document.querySelector('bs-row');
+            var col = row.querySelector('bs-col');
+
+            var classList = Array.prototype.slice.call(col.classList);
+            expect(classList).to.include('col-xs-11');
+            expect(classList).to.include('col-sm-6');
+            expect(classList).to.include('col-md-4');
+            expect(classList).to.include('col-lg-3');
+            expect(classList).to.include('col-xs-offset-1');
+            expect(classList).to.include('col-sm-offset-2');
+            expect(classList).to.include('col-md-offset-5');
+            expect(classList).to.include('col-lg-offset-9');
+        });
+
+        test('Change property in code.', function () {
+            var col = document.getElementById('automatedCol');
+
+            expect(col.getAttribute('class')).to.be.eql('col-md-6');
+
+            col.mdLength = 10;
+            expect(col.getAttribute('class')).to.be.eql('col-md-10');
+
+            col.mdLength = 2;
+            expect(col.getAttribute('class')).to.be.eql('col-md-2');
+        });
+
+    });
+</script>
+</body>
+</html>

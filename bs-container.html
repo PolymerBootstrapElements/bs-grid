@@ -1,0 +1,51 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+Bootstrap standard container
+
+Example:
+
+    <bs-container fluid>Full width content</bs-container>
+
+@demo
+-->
+
+<dom-module id="bs-container">
+
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+        </style>
+        <content></content>
+    </template>
+
+    <script>
+        Polymer({
+            is: 'bs-container',
+            properties: {
+                /**
+                 * Indicates whether container should use full width.
+                 */
+                fluid: {
+                    type: Boolean,
+                    notify: true,
+                    reflectToAttribute: true,
+                    value: false,
+                    observer: '_fluidChanged'
+                }
+            },
+            _fluidChanged: function () {
+                if (this.fluid) {
+                    this.classList.remove('container');
+                    this.classList.add('container-fluid');
+                } else {
+                    this.classList.remove('container-fluid');
+                    this.classList.add('container');
+                }
+            }
+        })
+    </script>
+
+</dom-module>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>bs-row tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <link rel="stylesheet" href="../../bootstrap/dist/css/bootstrap.min.css">
+    <script src="../../jquery/dist/jquery.min.js"></script>
+    <script src="../../bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script src="../../webcomponentsjs/webcomponents.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../bs-row.html">
+
+</head>
+<body>
+
+<bs-row id="aRow">Inside Row</bs-row>
+
+<script>
+    suite('<bs-row>', function () {
+
+        test('Acts as a div with row class.', function () {
+            var row = document.getElementById('aRow');
+
+            expect(row.getAttribute('class')).to.be.eql('row');
+            expect(row.textContent.trim()).to.be.eql('Inside Row');
+        });
+
+    });
+</script>
+</body>
+</html>
