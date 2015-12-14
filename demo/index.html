@@ -8,15 +8,21 @@
 
     <title>bs-grid Demo</title>
 
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <!-- bootstrap peer dependency -->
     <link rel="stylesheet" href="../../bootstrap/dist/css/bootstrap.min.css">
     <script src="../../jquery/dist/jquery.min.js"></script>
     <script src="../../bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- bootstrap -->
 
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <!-- demo dependencies -->
+    <link rel="import" href="../../bs-grid/bs-container.html">
+    <!-- demo -->
 
-    <link rel="import" href="../../marked-element/marked-element.html">
-
+    <!-- bs-grid imports -->
     <link rel="import" href="../bs-grid.html">
+    <!-- bs-grid -->
 
     <style>
         body {
@@ -53,7 +59,7 @@
     </style>
 </head>
 <body>
-<h1>&lt;bs-grid&gt; demo page</h1>
+<h1>bs-grid demo page</h1>
 <p>Here are some bootstrap grid layout using polymer elements designed for.</p>
 
 <bs-container fluid>
@@ -81,31 +87,24 @@
 
     </div>
     <figure>
-        <marked-element>
-            <div class="markdown-html"></div>
-            <script type="text/markdown">
-```html
-<!-- Stack the columns on mobile by making one full-width and the other half-width -->
-<bs-row>
-    <bs-col xs-length="12" md-length="8">.col-xs-12 .col-md-8</bs-col>
-    <bs-col xs-length="6" md-length="4">.col-xs-6 .col-md-4</bs-col>
-</bs-row>
+        <pre><code>&lt;!-- Stack the columns on mobile by making one full-width and the other half-width --&gt;
+&lt;bs-row&gt;
+    &lt;bs-col xs-length=&quot;12&quot; md-length=&quot;8&quot;&gt;.col-xs-12 .col-md-8&lt;/bs-col&gt;
+    &lt;bs-col xs-length=&quot;6&quot; md-length=&quot;4&quot;&gt;.col-xs-6 .col-md-4&lt;/bs-col&gt;
+&lt;/bs-row&gt;
 
-<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
-<bs-row>
-    <bs-col xs-length="6" md-length="4">.col-xs-6 .col-md-4</bs-col>
-    <bs-col xs-length="6" md-length="4">.col-xs-6 .col-md-4</bs-col>
-    <bs-col xs-length="6" md-length="4">.col-xs-6 .col-md-4</bs-col>
-</bs-row>
+&lt;!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop --&gt;
+&lt;bs-row&gt;
+    &lt;bs-col xs-length=&quot;6&quot; md-length=&quot;4&quot;&gt;.col-xs-6 .col-md-4&lt;/bs-col&gt;
+    &lt;bs-col xs-length=&quot;6&quot; md-length=&quot;4&quot;&gt;.col-xs-6 .col-md-4&lt;/bs-col&gt;
+    &lt;bs-col xs-length=&quot;6&quot; md-length=&quot;4&quot;&gt;.col-xs-6 .col-md-4&lt;/bs-col&gt;
+&lt;/bs-row&gt;
 
-<!-- Columns are always 50% wide, on mobile and desktop -->
-<bs-row>
-    <bs-col xs-length="6">.col-xs-6</bs-col>
-    <bs-col xs-length="6">.col-xs-6</bs-col>
-</bs-row>
-```
-            </script>
-        </marked-element>
+&lt;!-- Columns are always 50% wide, on mobile and desktop --&gt;
+&lt;bs-row&gt;
+    &lt;bs-col xs-length=&quot;6&quot;&gt;.col-xs-6&lt;/bs-col&gt;
+    &lt;bs-col xs-length=&quot;6&quot;&gt;.col-xs-6&lt;/bs-col&gt;
+&lt;/bs-row&gt;</code></pre>
     </figure>
 </bs-container>
 
@@ -125,24 +124,17 @@
         </bs-row>
     </div>
     <figure>
-        <marked-element>
-            <div class="markdown-html"></div>
-            <script type="text/markdown">
-```html
-<bs-row>
-    <bs-col md-length="4">.col-md-4</bs-col>
-    <bs-col md-length="4" md-offset="4">.col-md-4 .col-md-offset-4</bs-col>
-</bs-row>
-<bs-row>
-    <div md-length="3" md-offset="3">.col-md-3 .col-md-offset-3</div>
-    <div md-length="3" md-offset="3">.col-md-3 .col-md-offset-3</div>
-</bs-row>
-<bs-row>
-    <bs-col md-length="6" md-offset="3">.col-md-6 .col-md-offset-3</bs-col>
-</bs-row>
-```
-            </script>
-        </marked-element>
+        <pre><code>&lt;bs-row&gt;
+    &lt;bs-col md-length=&quot;4&quot;&gt;.col-md-4&lt;/bs-col&gt;
+    &lt;bs-col md-length=&quot;4&quot; md-offset=&quot;4&quot;&gt;.col-md-4 .col-md-offset-4&lt;/bs-col&gt;
+&lt;/bs-row&gt;
+&lt;bs-row&gt;
+    &lt;div md-length=&quot;3&quot; md-offset=&quot;3&quot;&gt;.col-md-3 .col-md-offset-3&lt;/div&gt;
+    &lt;div md-length=&quot;3&quot; md-offset=&quot;3&quot;&gt;.col-md-3 .col-md-offset-3&lt;/div&gt;
+&lt;/bs-row&gt;
+&lt;bs-row&gt;
+    &lt;bs-col md-length=&quot;6&quot; md-offset=&quot;3&quot;&gt;.col-md-6 .col-md-offset-3&lt;/bs-col&gt;
+&lt;/bs-row&gt;</code></pre>
     </figure>
 </bs-container>
 </body>
