@@ -55,6 +55,10 @@
             background: lightgray;
             padding: 5px 10px;
         }
+
+        .custom-container{
+            border: dotted 1px gray;
+        }
     </style>
 </head>
 <body>
@@ -136,5 +140,17 @@
 &lt;/bs-row&gt;</code></pre>
     </figure>
 </bs-container>
+
+<bs-container fluid class="custom-container">
+    <h3>Container style can be increased</h3>
+    <p>You can add custom style to bs-container using <strong>class=</strong> assignment.</p>
+    <figure>
+        <pre><code>&lt;bs-container fluid class=&quot;custom-container&quot;&gt;&lt;/bs-container&gt;</code></pre>
+    </figure>
+    <p>Generated code is:</p>
+    <pre><code>&lt;bs-container fluid=&quot;&quot; class=&quot;custom-container container-fluid&quot;&gt;&lt;/bs-container&gt;</code></pre>
+</bs-container>
+
+
 </body>
 </html>
